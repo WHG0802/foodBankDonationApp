@@ -46,6 +46,6 @@ public class Donation {
     }
 
     public String toString() {
-        return String.format("%d %s %s %s %s %s %s %s", id, firstName, lastName, email, nameOfDonation, type, description, date);
+        return String.format("%d %s %s %s %s %s %s", id, firstName, lastName, email, nameOfDonation, type, description);
     }
 }

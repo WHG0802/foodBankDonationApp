@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface DonationRepo extends JpaRepository<Donation, Long> {
     Optional<Donation> findByEmail(String email);
-    List<Donation> findByDonationType(DonationType type);
+    List<Donation> findByType(DonationType type);
 }

@@ -4,10 +4,14 @@ import com.goodguys.foodBankDonationApp.domain.core.ResourceNotFoundException;
 import com.goodguys.foodBankDonationApp.domain.donation.model.Donation;
 import com.goodguys.foodBankDonationApp.domain.donation.model.DonationType;
 import com.goodguys.foodBankDonationApp.domain.donation.repository.DonationRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@Slf4j
 public class DonationServiceImpl implements DonationService{
 
     private DonationRepo donationRepo;
@@ -43,7 +47,7 @@ public class DonationServiceImpl implements DonationService{
 
     @Override
     public List<Donation> getByDonationType(DonationType type) throws ResourceNotFoundException {
-        List<Donation> items = donationRepo.findByDonationType(type);
+        List<Donation> items = donationRepo.findByType(type);
         return items;
     }
 
